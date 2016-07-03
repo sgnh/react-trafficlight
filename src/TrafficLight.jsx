@@ -78,7 +78,7 @@ export default class TrafficLight extends Component {
               <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
               <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
             </filter>
-          </defs>}
+          </defs>
           <rect fill={black} x="0" y="0" width="60" height="160" rx="8"></rect>
 
           <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.redClick}>
