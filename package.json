@@ -3,6 +3,13 @@
   "version": "1.0.8",
   "description": "Traffic light component for React.",
   "main": "index.js",
+  "keywords": [
+    "react",
+    "component",
+    "trafficlight",
+    "traffic",
+    "light"
+  ],
   "scripts": {
     "build": "npm run build:babel && npm run build:copy-files",
     "build:babel": "babel ./src --out-dir ./build",
