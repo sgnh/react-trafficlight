@@ -6,14 +6,8 @@ export default class TrafficLight extends Component {
 
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
-    this.redClick = this.redClick.bind(this);
-    this.yellowClick = this.yellowClick.bind(this);
-    this.greenClick = this.greenClick.bind(this);
 
     this.state = {
-      redOn: true,
-      yellowOn: false,
-      greenOn: false,
       cursor: 'auto',
     };
   }
@@ -30,35 +24,6 @@ export default class TrafficLight extends Component {
     if (this.props.Clickable) {
       this.setState({
         cursor: 'auto',
-      });
-    }
-  }
-
-  redClick() {
-    if (this.props.Clickable) {
-      this.setState({
-        redOn: true,
-        yellowOn: false,
-        greenOn: false,
-      });
-    }
-  }
-
-  yellowClick() {
-    if (this.props.Clickable) {
-      this.setState({
-        yellowOn: true,
-        greenOn: false,
-      });
-    }
-  }
-
-  greenClick() {
-    if (this.props.Clickable) {
-      this.setState({
-        redOn: false,
-        yellowOn: false,
-        greenOn: true,
       });
     }
   }
@@ -84,14 +49,14 @@ export default class TrafficLight extends Component {
           </defs>
           <rect fill={this.props.BlackColor} x="0" y="0" width="60" height="160" rx="8"></rect>
 
-          <use fill={this.state.redOn ? this.props.RedColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#redCirclePath"></use>
-          <use fill={this.state.yellowOn ? this.props.YellowColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#yellowCirclePath"></use>
-          <use fill={this.state.greenOn ? this.props.GreenColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
+          <use fill={this.props.RedOn ? this.props.RedColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#redCirclePath"></use>
+          <use fill={this.props.YellowOn ? this.props.YellowColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#yellowCirclePath"></use>
+          <use fill={this.props.GreenOn ? this.props.GreenColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
 
           <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-            <use onClick={this.redClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
-            <use onClick={this.yellowClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath"></use>
-            <use onClick={this.greenClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
+            <use onClick={() => this.props.onLightClick('RED')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
+            <use onClick={() => this.props.onLightClick('YELLOW')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath"></use>
+            <use onClick={() => this.props.onLightClick('GREEN')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
           </g>
         </svg>
       </div>
@@ -102,6 +67,10 @@ export default class TrafficLight extends Component {
 
 TrafficLight.propTypes = {
   Clickable: React.PropTypes.boolean,
+  onLightClick: React.PropTypes.func,
+  RedOn: React.PropTypes.boolean,
+  YellowOn: React.PropTypes.boolean,
+  GreenOn: React.PropTypes.boolean,
   Size: React.PropTypes.number,
   BlackColor: React.PropTypes.string,
   DisabledColor: React.PropTypes.string,
@@ -112,6 +81,10 @@ TrafficLight.propTypes = {
 
 TrafficLight.defaultProps = {
   Clickable: true,
+  RedOn: false,
+  YellowOn: false,
+  GreenOn: false,
+  onLightClick: () => {},
   Size: 60,
   BlackColor: '#000000',
   DisabledColor: '#4A4A4A',
