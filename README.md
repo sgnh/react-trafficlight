@@ -1,6 +1,7 @@
 Traffic light component for React
 =================================
 ![Traffic light](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight.png "Traffic light")
+
 Example 1
 ---------
 ```javascript
