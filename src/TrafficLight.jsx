@@ -4,28 +4,9 @@ export default class TrafficLight extends Component {
   constructor(props) {
     super(props);
 
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
-
     this.state = {
-      cursor: 'auto',
+      isHovering: false,
     };
-  }
-
-  onMouseEnter() {
-    if (this.props.Clickable) {
-      this.setState({
-        cursor: 'pointer',
-      });
-    }
-  }
-
-  onMouseLeave() {
-    if (this.props.Clickable) {
-      this.setState({
-        cursor: 'auto',
-      });
-    }
   }
 
   onLightClick(color) {
@@ -34,12 +15,20 @@ export default class TrafficLight extends Component {
     }
   }
 
+  setHover(isHovering) {
+    if (this.props.Clickable) {
+      this.setState({
+        isHovering,
+      });
+    }
+  }
+
   render() {
     const scale = 1 / 0.375;
 
     /* eslint-disable max-len */
     return (
-      <span style={{ cursor: this.state.cursor }}>
+      <span style={{ cursor: this.state.isHovering ? 'pointer' : 'auto' }}>
         <svg width={`${this.props.Size}px`} height={`${this.props.Size * scale}px`} viewBox="0 0 60 160" version="1.1">
           <defs>
             <circle id="redCirclePath" cx="30" cy="30" r="20"></circle>
@@ -59,7 +48,7 @@ export default class TrafficLight extends Component {
           <use fill={this.props.YellowOn ? this.props.YellowColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#yellowCirclePath"></use>
           <use fill={this.props.GreenOn ? this.props.GreenColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
 
-          <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+          <g onMouseEnter={() => this.setHover(true)} onMouseLeave={() => this.setHover(false)}>
             <use onClick={() => this.onLightClick('RED')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
             <use onClick={() => this.onLightClick('YELLOW')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath"></use>
             <use onClick={() => this.onLightClick('GREEN')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
