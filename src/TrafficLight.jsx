@@ -54,12 +54,6 @@ export default class TrafficLight extends Component {
   }
 
   render() {
-    const black = '#000000';
-    const red = '#D0021B';
-    const yellow = '#F8E71C';
-    const green = '#7ED321';
-    const gray = '#4A4A4A';
-
     const scale = this.props.Size / 60;
     const width = 60 * scale;
     const height = 160 * scale;
@@ -80,11 +74,11 @@ export default class TrafficLight extends Component {
               <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
             </filter>
           </defs>
-          <rect fill={black} x="0" y="0" width="60" height="160" rx="8"></rect>
+          <rect fill={this.props.BlackColor} x="0" y="0" width="60" height="160" rx="8"></rect>
 
-          <use fill={this.state.redOn ? red : gray} fillRule="evenodd" xlinkHref="#redCirclePath"></use>
-          <use fill={this.state.yellowOn ? yellow : gray} fillRule="evenodd" xlinkHref="#yellowCirclePath"></use>
-          <use fill={this.state.greenOn ? green : gray} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
+          <use fill={this.state.redOn ? this.props.RedColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#redCirclePath"></use>
+          <use fill={this.state.yellowOn ? this.props.YellowColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#yellowCirclePath"></use>
+          <use fill={this.state.greenOn ? this.props.GreenColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
 
           <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
             <use onClick={this.redClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
@@ -100,8 +94,18 @@ export default class TrafficLight extends Component {
 
 TrafficLight.propTypes = {
   Size: React.PropTypes.number,
+  BlackColor: React.PropTypes.string,
+  DisabledColor: React.PropTypes.string,
+  RedColor: React.PropTypes.string,
+  YellowColor: React.PropTypes.string,
+  GreenColor: React.PropTypes.string,
 };
 
 TrafficLight.defaultProps = {
   Size: 60,
+  BlackColor: '#000000',
+  DisabledColor: '#4A4A4A',
+  RedColor: '#D0021B',
+  YellowColor: '#F8E71C',
+  GreenColor: '#7ED321',
 };
