@@ -28,6 +28,12 @@ export default class TrafficLight extends Component {
     }
   }
 
+  onLightClick(color) {
+    if (this.props.Clickable) {
+      this.props.onLightClick(color);
+    }
+  }
+
   render() {
     const scale = 1 / 0.375;
 
@@ -54,9 +60,9 @@ export default class TrafficLight extends Component {
           <use fill={this.props.GreenOn ? this.props.GreenColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
 
           <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-            <use onClick={() => this.props.onLightClick('RED')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
-            <use onClick={() => this.props.onLightClick('YELLOW')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath"></use>
-            <use onClick={() => this.props.onLightClick('GREEN')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
+            <use onClick={() => this.onLightClick('RED')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
+            <use onClick={() => this.onLightClick('YELLOW')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath"></use>
+            <use onClick={() => this.onLightClick('GREEN')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
           </g>
         </svg>
       </span>
@@ -80,7 +86,7 @@ TrafficLight.propTypes = {
 };
 
 TrafficLight.defaultProps = {
-  Clickable: true,
+  Clickable: false,
   RedOn: false,
   YellowOn: false,
   GreenOn: false,
