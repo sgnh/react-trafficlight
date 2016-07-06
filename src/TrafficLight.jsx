@@ -66,11 +66,11 @@ export default class TrafficLight extends Component {
 }
 
 TrafficLight.propTypes = {
-  Clickable: React.PropTypes.boolean,
+  Clickable: React.PropTypes.bool,
   onLightClick: React.PropTypes.func,
-  RedOn: React.PropTypes.boolean,
-  YellowOn: React.PropTypes.boolean,
-  GreenOn: React.PropTypes.boolean,
+  RedOn: React.PropTypes.bool,
+  YellowOn: React.PropTypes.bool,
+  GreenOn: React.PropTypes.bool,
   Size: React.PropTypes.number,
   BlackColor: React.PropTypes.string,
   DisabledColor: React.PropTypes.string,
