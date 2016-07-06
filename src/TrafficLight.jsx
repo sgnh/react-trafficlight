@@ -33,7 +33,7 @@ export default class TrafficLight extends Component {
 
     /* eslint-disable max-len */
     return (
-      <div style={{ cursor: this.state.cursor }}>
+      <span style={{ cursor: this.state.cursor }}>
         <svg width={`${this.props.Size}px`} height={`${this.props.Size * scale}px`} viewBox="0 0 60 160" version="1.1">
           <defs>
             <circle id="redCirclePath" cx="30" cy="30" r="20"></circle>
@@ -59,7 +59,7 @@ export default class TrafficLight extends Component {
             <use onClick={() => this.props.onLightClick('GREEN')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
           </g>
         </svg>
-      </div>
+      </span>
     );
     /* eslint-enable max-len */
   }
