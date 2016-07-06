@@ -19,38 +19,48 @@ export default class TrafficLight extends Component {
   }
 
   onMouseEnter() {
-    this.setState({
-      cursor: 'pointer',
-    });
+    if (this.props.Clickable) {
+      this.setState({
+        cursor: 'pointer',
+      });
+    }
   }
 
   onMouseLeave() {
-    this.setState({
-      cursor: 'auto',
-    });
+    if (this.props.Clickable) {
+      this.setState({
+        cursor: 'auto',
+      });
+    }
   }
 
   redClick() {
-    this.setState({
-      redOn: true,
-      yellowOn: false,
-      greenOn: false,
-    });
+    if (this.props.Clickable) {
+      this.setState({
+        redOn: true,
+        yellowOn: false,
+        greenOn: false,
+      });
+    }
   }
 
   yellowClick() {
-    this.setState({
-      yellowOn: true,
-      greenOn: false,
-    });
+    if (this.props.Clickable) {
+      this.setState({
+        yellowOn: true,
+        greenOn: false,
+      });
+    }
   }
 
   greenClick() {
-    this.setState({
-      redOn: false,
-      yellowOn: false,
-      greenOn: true,
-    });
+    if (this.props.Clickable) {
+      this.setState({
+        redOn: false,
+        yellowOn: false,
+        greenOn: true,
+      });
+    }
   }
 
   render() {
@@ -91,6 +101,7 @@ export default class TrafficLight extends Component {
 }
 
 TrafficLight.propTypes = {
+  Clickable: React.PropTypes.boolean,
   Size: React.PropTypes.number,
   BlackColor: React.PropTypes.string,
   DisabledColor: React.PropTypes.string,
@@ -100,6 +111,7 @@ TrafficLight.propTypes = {
 };
 
 TrafficLight.defaultProps = {
+  Clickable: true,
   Size: 60,
   BlackColor: '#000000',
   DisabledColor: '#4A4A4A',
