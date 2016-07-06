@@ -54,14 +54,12 @@ export default class TrafficLight extends Component {
   }
 
   render() {
-    const scale = this.props.Size / 60;
-    const width = 60 * scale;
-    const height = 160 * scale;
+    const scale = 1 / 0.375;
 
     /* eslint-disable max-len */
     return (
       <div style={{ cursor: this.state.cursor }}>
-        <svg width={`${width}px`} height={`${height}px`} viewBox="0 0 60 160" version="1.1">
+        <svg width={`${this.props.Size}px`} height={`${this.props.Size * scale}px`} viewBox="0 0 60 160" version="1.1">
           <defs>
             <circle id="redCirclePath" cx="30" cy="30" r="20"></circle>
             <circle id="yellowCirclePath" cx="30" cy="80" r="20"></circle>
