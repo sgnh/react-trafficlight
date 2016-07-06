@@ -58,6 +58,7 @@ export default class TrafficLight extends Component {
     const red = '#D0021B';
     const yellow = '#F8E71C';
     const green = '#7ED321';
+    const gray = '#4A4A4A';
 
     const scale = this.props.Size / 60;
     const width = 60 * scale;
@@ -81,17 +82,14 @@ export default class TrafficLight extends Component {
           </defs>
           <rect fill={black} x="0" y="0" width="60" height="160" rx="8"></rect>
 
-          <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.redClick}>
-            <use fill={this.state.redOn ? red : '#4A4A4A'} fillRule="evenodd" xlinkHref="#redCirclePath"></use>
-            <use fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
-          </g>
-          <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.yellowClick}>
-            <use fill={this.state.yellowOn ? yellow : '#4A4A4A'} fillRule="evenodd" xlinkHref="#yellowCirclePath"></use>
-            <use fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath"></use>
-          </g>
-          <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.greenClick}>
-            <use fill={this.state.greenOn ? green : '#4A4A4A'} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
-            <use fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
+          <use fill={this.state.redOn ? red : gray} fillRule="evenodd" xlinkHref="#redCirclePath"></use>
+          <use fill={this.state.yellowOn ? yellow : gray} fillRule="evenodd" xlinkHref="#yellowCirclePath"></use>
+          <use fill={this.state.greenOn ? green : gray} fillRule="evenodd" xlinkHref="#greenCirclePath"></use>
+
+          <g onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+            <use onClick={this.redClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath"></use>
+            <use onClick={this.yellowClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath"></use>
+            <use onClick={this.greenClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath"></use>
           </g>
         </svg>
       </div>
