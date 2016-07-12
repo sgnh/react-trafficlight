@@ -1,6 +1,6 @@
 {
   "name": "react-trafficlight",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Traffic light component for React.",
   "main": "index.js",
   "keywords": [
@@ -20,6 +20,9 @@
   "repository": {
     "type": "git",
     "url": "https://www.github.com/sgnh/react-trafficlight.git"
+  },
+  "bugs": {
+    "url": "https://www.github.com/sgnh/react-trafficlight/issues"
   },
   "author": "Steffen Hansen",
   "license": "MIT",
