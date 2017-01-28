@@ -2,7 +2,7 @@
   "name": "react-trafficlight",
   "version": "2.1.2",
   "description": "Traffic light component for React.",
-  "main": "TrafficLight.js",
+  "main": "lib/TrafficLight.js",
   "keywords": [
     "react",
     "component",
@@ -12,9 +12,9 @@
   ],
   "scripts": {
     "build": "npm run build:babel && npm run build:copy-files",
-    "build:babel": "babel ./src --out-dir ./build",
+    "build:babel": "babel src -d build/lib",
     "build:copy-files": "babel-node ./scripts/copy-files.js",
-    "dev": "babel -w ./src --out-dir ./build",
+    "dev": "babel -w src -d build/lib",
     "clean": "rimraf build"
   },
   "repository": {
