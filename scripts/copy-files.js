@@ -58,7 +58,7 @@ function createPackageFile() {
       author,
       version,
       description,
-      main: './index.js',
+      main: './lib/TrafficLight.js',
       keywords,
       repository,
       license,
