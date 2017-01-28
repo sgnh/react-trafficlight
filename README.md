@@ -2,8 +2,12 @@ Traffic light component for React
 =================================
 ![Traffic light](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight.png "Traffic light")
 
-Example 1
----------
+Usage example
+-------------
+![Traffic light status example](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight-status.png "Traffic light status example")
+
+Code example 1
+--------------
 ```javascript
 const TrafficLightContainerExample1 = () => (
   <div>
@@ -15,8 +19,8 @@ const TrafficLightContainerExample1 = () => (
 );
 ```
 
-Example 2 - Clickable
----------------------
+Code example 2 - Clickable
+--------------------------
 ```javascript
 class TrafficLightContainerExample2 extends Component {
   constructor(props) {
