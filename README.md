@@ -9,6 +9,8 @@ Usage example
 Code example 1
 --------------
 ```javascript
+import TrafficLight from 'react-trafficlight';
+
 const TrafficLightContainerExample1 = () => (
   <div>
     <TrafficLight RedOn />
@@ -22,6 +24,8 @@ const TrafficLightContainerExample1 = () => (
 Code example 2 - Clickable
 --------------------------
 ```javascript
+import TrafficLight from 'react-trafficlight';
+
 class TrafficLightContainerExample2 extends Component {
   constructor(props) {
     super(props);
