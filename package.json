@@ -2,7 +2,6 @@
   "name": "react-trafficlight",
   "version": "2.1.2",
   "description": "Traffic light component for React.",
-  "main": "lib/TrafficLight.js",
   "keywords": [
     "react",
     "component",
