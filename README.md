@@ -1,13 +1,10 @@
-Traffic light component for React
-=================================
+# Traffic light component for React
 ![Traffic light](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight.png "Traffic light")
 
-Usage example
--------------
+## Usage example
 ![Traffic light status example](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight-status.png "Traffic light status example")
 
-Code example 1
---------------
+## Code example 1
 ```javascript
 import TrafficLight from 'react-trafficlight';
 
@@ -21,8 +18,7 @@ const TrafficLightContainerExample1 = () => (
 );
 ```
 
-Code example 2 - Clickable
---------------------------
+# Code example 2 - Clickable
 ```javascript
 import TrafficLight from 'react-trafficlight';
 
