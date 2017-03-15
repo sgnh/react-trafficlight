@@ -1,6 +1,11 @@
 # Traffic light component for React
 ![Traffic light](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight.png "Traffic light")
 
+## Installation
+```
+npm install --save react-trafficlight
+```
+
 ## Example use
 ![Traffic light status example](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight-status.png "Traffic light status example")
 
