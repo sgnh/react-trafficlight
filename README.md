@@ -23,7 +23,7 @@ const TrafficLightContainerExample1 = () => (
 );
 ```
 
-# Usage example 2 - Clickable
+## Usage example 2 - Clickable
 ```javascript
 import TrafficLight from 'react-trafficlight';
 
