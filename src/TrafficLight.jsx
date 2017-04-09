@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class TrafficLight extends Component {
   constructor(props) {
@@ -61,17 +62,17 @@ export default class TrafficLight extends Component {
 }
 
 TrafficLight.propTypes = {
-  Clickable: React.PropTypes.bool,
-  onLightClick: React.PropTypes.func,
-  RedOn: React.PropTypes.bool,
-  YellowOn: React.PropTypes.bool,
-  GreenOn: React.PropTypes.bool,
-  Size: React.PropTypes.number,
-  BlackColor: React.PropTypes.string,
-  DisabledColor: React.PropTypes.string,
-  RedColor: React.PropTypes.string,
-  YellowColor: React.PropTypes.string,
-  GreenColor: React.PropTypes.string,
+  Clickable: PropTypes.bool,
+  onLightClick: PropTypes.func,
+  RedOn: PropTypes.bool,
+  YellowOn: PropTypes.bool,
+  GreenOn: PropTypes.bool,
+  Size: PropTypes.number,
+  BlackColor: PropTypes.string,
+  DisabledColor: PropTypes.string,
+  RedColor: PropTypes.string,
+  YellowColor: PropTypes.string,
+  GreenColor: PropTypes.string,
 };
 
 TrafficLight.defaultProps = {
