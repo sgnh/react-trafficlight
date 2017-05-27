@@ -4,6 +4,16 @@ machine:
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
+general:
+  artifacts:
+    - "package.json"
+    - "README.md"
+    - "LICENSE"
+    - "TrafficLight.js"
+    - "es"
+    - "CHANGELOG.md"
+    - "umd"
+
 dependencies:
   override:
     - yarn
