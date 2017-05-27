@@ -17,7 +17,7 @@
     "build:babel": "babel src -d build/lib",
     "build:copy-files": "babel-node ./scripts/copy-files.js",
     "dev": "babel -w src -d build/lib",
-    "clean": "rimraf build"
+    "clean": "git clean -fdX ."
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
