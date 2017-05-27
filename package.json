@@ -6,6 +6,7 @@
   "license": "MIT",
   "author": "Steffen Hansen",
   "main": "TrafficLight.js",
+  "module": "es/TrafficLight.js",
   "files": [
     "TrafficLight.js",
     "es",
