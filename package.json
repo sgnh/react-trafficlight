@@ -2,6 +2,7 @@
   "name": "react-trafficlight",
   "version": "4.0.1",
   "description": "Traffic light component for React.",
+  "repository": "sgnh/react-trafficlight",
   "keywords": [
     "react",
     "component",
@@ -15,13 +16,6 @@
     "build:copy-files": "babel-node ./scripts/copy-files.js",
     "dev": "babel -w src -d build/lib",
     "clean": "rimraf build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://www.github.com/sgnh/react-trafficlight.git"
-  },
-  "bugs": {
-    "url": "https://www.github.com/sgnh/react-trafficlight/issues"
   },
   "author": "Steffen Hansen",
   "license": "MIT",
