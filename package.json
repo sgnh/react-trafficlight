@@ -28,7 +28,6 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.5",
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
     "eslint": "^3.13.1",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.2.0",
