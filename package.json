@@ -3,6 +3,8 @@
   "version": "4.0.1",
   "description": "Traffic light component for React.",
   "repository": "sgnh/react-trafficlight",
+  "license": "MIT",
+  "author": "Steffen Hansen",  
   "keywords": [
     "react",
     "component",
@@ -17,8 +19,6 @@
     "dev": "babel -w src -d build/lib",
     "clean": "rimraf build"
   },
-  "author": "Steffen Hansen",
-  "license": "MIT",
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0"
