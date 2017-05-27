@@ -10,12 +10,6 @@ export default class TrafficLight extends Component {
     };
   }
 
-  onLightClick(color) {
-    if (this.props.Clickable) {
-      this.props.onLightClick(color);
-    }
-  }
-
   setHover(isHovering) {
     if (this.props.Clickable) {
       this.setState({
@@ -50,9 +44,9 @@ export default class TrafficLight extends Component {
           <use fill={this.props.GreenOn ? this.props.GreenColor : this.props.DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath" />
 
           <g onMouseEnter={() => this.setHover(true)} onMouseLeave={() => this.setHover(false)}>
-            <use onClick={() => this.onLightClick('RED')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath" />
-            <use onClick={() => this.onLightClick('YELLOW')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath" />
-            <use onClick={() => this.onLightClick('GREEN')} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath" />
+            <use onClick={this.props.onRedClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath" />
+            <use onClick={this.props.onYellowClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath" />
+            <use onClick={this.props.onGreenClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath" />
           </g>
         </svg>
       </span>
@@ -63,7 +57,9 @@ export default class TrafficLight extends Component {
 
 TrafficLight.propTypes = {
   Clickable: PropTypes.bool,
-  onLightClick: PropTypes.func,
+  onRedClick: PropTypes.func,
+  onYellowClick: PropTypes.func,
+  onGreenClick: PropTypes.func,
   RedOn: PropTypes.bool,
   YellowOn: PropTypes.bool,
   GreenOn: PropTypes.bool,
@@ -77,10 +73,12 @@ TrafficLight.propTypes = {
 
 TrafficLight.defaultProps = {
   Clickable: false,
+  onRedClick: undefined,
+  onYellowClick: undefined,
+  onGreenClick: undefined,
   RedOn: false,
   YellowOn: false,
   GreenOn: false,
-  onLightClick: () => {},
   Size: 60,
   BlackColor: '#000000',
   DisabledColor: '#4A4A4A',
