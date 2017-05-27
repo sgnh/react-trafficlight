@@ -4,7 +4,20 @@ import PropTypes from 'prop-types';
 
 const scale = 1 / 0.375;
 
-const TrafficLight = ({ onRedClick, onYellowClick, onGreenClick, RedOn, YellowOn, GreenOn, Size, BlackColor, DisabledColor, RedColor, YellowColor, GreenColor }) => (
+const TrafficLight = ({
+  onRedClick,
+  onYellowClick,
+  onGreenClick,
+  RedOn,
+  YellowOn,
+  GreenOn,
+  Size,
+  BlackColor,
+  DisabledColor,
+  RedColor,
+  YellowColor,
+  GreenColor,
+}) => (
   <svg width={`${Size}px`} height={`${Size * scale}px`} viewBox="0 0 60 160" version="1.1">
     <defs>
       <circle style={{ cursor: onRedClick ? 'pointer' : undefined }} id="redCirclePath" cx="30" cy="30" r="20" />
