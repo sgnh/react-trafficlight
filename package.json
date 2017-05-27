@@ -5,6 +5,11 @@
   "repository": "sgnh/react-trafficlight",
   "license": "MIT",
   "author": "Steffen Hansen",
+  "files": [
+    "TrafficLight.js",
+    "es",
+    "umd"
+  ],
   "keywords": [
     "react",
     "component",
