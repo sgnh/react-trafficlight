@@ -17,8 +17,9 @@ const TrafficLight = ({
   RedColor,
   YellowColor,
   GreenColor,
+  ...props
 }) => (
-  <svg width={`${Size}px`} height={`${Size * scale}px`} viewBox="0 0 60 160" version="1.1">
+  <svg width={`${Size}px`} height={`${Size * scale}px`} viewBox="0 0 60 160" version="1.1" {...props}>
     <defs>
       <circle style={{ cursor: onRedClick ? 'pointer' : undefined }} id="redCirclePath" cx="30" cy="30" r="20" />
       <circle style={{ cursor: onYellowClick ? 'pointer' : undefined }} id="yellowCirclePath" cx="30" cy="80" r="20" />
