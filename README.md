@@ -1,4 +1,6 @@
-# Traffic light component for React
+# react-trafficlight
+Traffic light component for React.
+
 ![Traffic light](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight.png "Traffic light")
 
 ## Installation
