@@ -1,5 +1,6 @@
 {
   "presets": ["react"],
+  "plugins": ["babel-plugin-transform-object-rest-spread"],
   "env": {
     "commonjs": {
       "presets": [["env", { "modules": "commonjs" }]]
