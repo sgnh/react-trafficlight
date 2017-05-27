@@ -18,11 +18,12 @@
     "light"
   ],
   "scripts": {
-    "build": "npm run build:babel && npm run build:copy-files",
-    "build:babel": "babel src -d build/lib",
-    "build:copy-files": "babel-node ./scripts/copy-files.js",
-    "dev": "babel -w src -d build/lib",
-    "clean": "git clean -fdX ."
+    "clean": "git clean -fdX .",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d .",
+    "build:es": "cross-env BABEL_ENV=es babel src -d es",
+    "build:umd": "cross-env NODE_ENV=production webpack src/TrafficLight.js umd/react-trafficlight.js",
+    "build:umd:min": "cross-env NODE_ENV=production webpack -p src/TrafficLight.js umd/react-trafficlight.min.js",
+    "build": "yarn run build:commonjs && yarn run build:es && yarn run build:umd && yarn run build:umd:min"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
