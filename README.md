@@ -11,6 +11,7 @@ npm install --save react-trafficlight
 
 ## Usage example 1
 ```javascript
+import React from 'react';
 import TrafficLight from 'react-trafficlight';
 
 const TrafficLightContainerExample1 = () => (
@@ -21,42 +22,35 @@ const TrafficLightContainerExample1 = () => (
     <TrafficLight GreenOn />
   </div>
 );
+
+export default TrafficLightContainerExample1;
 ```
 
 ## Usage example 2 - Clickable
 ```javascript
+import React, { Component } from 'react';
 import TrafficLight from 'react-trafficlight';
 
 class TrafficLightContainerExample2 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redOn: true,
-      yellowOn: false,
-      greenOn: false,
-    };
-  }
-
-  onLightClick(color) {
-    this.setState({
-      redOn: color === 'RED',
-      yellowOn: color === 'YELLOW',
-      greenOn: color === 'GREEN',
-    });
+  state = {
+    redOn: true,
+    yellowOn: false,
+    greenOn: false,
   }
 
   render() {
     return (
-      <div>
-        <TrafficLight
-          Clickable
-          onLightClick={(color) => this.onLightClick(color)}
-          RedOn={this.state.redOn}
-          YellowOn={this.state.yellowOn}
-          GreenOn={this.state.greenOn}
-        />
-      </div>
+      <TrafficLight
+        onRedClick={() => this.setState({ redOn: !this.state.redOn })}
+        onYellowClick={() => this.setState({ yellowOn: !this.state.yellowOn })}
+        onGreenClick={() => this.setState({ greenOn: !this.state.greenOn })}
+        RedOn={this.state.redOn}
+        YellowOn={this.state.yellowOn}
+        GreenOn={this.state.greenOn}
+      />
     );
   }
 }
+
+export default TrafficLightContainerExample2;
 ```
