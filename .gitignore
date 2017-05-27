@@ -1,4 +1,8 @@
 node_modules
-build
 .vscode
 npm-debug.log
+/*.js
+es
+umd
+!.eslintrc.js
+!webpack.config.js
