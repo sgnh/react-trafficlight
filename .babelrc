@@ -1,3 +1,15 @@
 {
-  "presets": ["es2015", "react", "stage-0"]
+  "presets": ["react"],
+  "env": {
+    "commonjs": {
+      "presets": [["env", { "modules": "commonjs" }]]
+    },
+    "es": {
+      "presets": [["env", { "modules": false }]]
+    },
+    "production": {
+      "presets": [["env", { "modules": "commonjs" }]],
+      "plugins": [["transform-react-remove-prop-types", { "removeImport": true }]]
+    }
+  }
 }
