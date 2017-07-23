@@ -8,6 +8,9 @@ Traffic light component for React.
 npm install --save react-trafficlight
 ```
 
+## Demo
+Working demo on CodePen: [React Traffic Light](https://codepen.io/sgnh/full/jmRXwd/)
+
 ## Example use
 ![Traffic light status example](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight-status.png "Traffic light status example")
 
