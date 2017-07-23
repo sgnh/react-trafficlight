@@ -1,6 +1,6 @@
 {
   "name": "react-trafficlight",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "Traffic light component for React.",
   "repository": "sgnh/react-trafficlight",
   "license": "MIT",
