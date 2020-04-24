@@ -9,6 +9,7 @@
   "main": "dist/TrafficLight.js",
   "module": "dist/TrafficLight.module.js",
   "unpkg": "dist/TrafficLight.umd.js",
+  "amdName": "trafficlight",
   "files": [
     "dist"
   ],
@@ -21,7 +22,7 @@
   ],
   "scripts": {
     "clean": "git clean -fdX .",
-    "build": "microbundle --globals reactTrafficlight=trafficlight"
+    "build": "microbundle"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
