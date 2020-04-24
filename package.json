@@ -28,13 +28,13 @@
     "react": "^15.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.13.1",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
     "microbundle": "^0.11.0",
-    "prop-types": "^15.5.4",
-    "react": "^15.4.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1"
   }
 }
