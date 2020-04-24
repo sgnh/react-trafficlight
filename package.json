@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "clean": "git clean -fdX .",
-    "build": "microbundle"
+    "build": "microbundle --globals reactTrafficlight=trafficlight"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
