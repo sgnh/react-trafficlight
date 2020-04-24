@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "clean": "git clean -fdX .",
-    "build": "microbundle"
+    "build": "microbundle --jsx React.createElement"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
