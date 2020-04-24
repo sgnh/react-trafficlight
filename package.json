@@ -5,12 +5,12 @@
   "repository": "sgnh/react-trafficlight",
   "license": "MIT",
   "author": "Steffen Hansen",
-  "main": "TrafficLight.js",
-  "module": "es/TrafficLight.js",
+  "source": "src/TrafficLight.js",
+  "main": "dist/TrafficLight.js",
+  "module": "dist/TrafficLight.module.js",
+  "unpkg": "dist/TrafficLight.umd.js",
   "files": [
-    "TrafficLight.js",
-    "es",
-    "umd"
+    "dist"
   ],
   "keywords": [
     "react",
@@ -21,31 +21,20 @@
   ],
   "scripts": {
     "clean": "git clean -fdX .",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d .",
-    "build:es": "cross-env BABEL_ENV=es babel src -d es",
-    "build:umd": "cross-env NODE_ENV=production webpack src/TrafficLight.js umd/react-trafficlight.js",
-    "build:umd:min": "cross-env NODE_ENV=production webpack -p src/TrafficLight.js umd/react-trafficlight.min.js",
-    "build": "yarn run build:commonjs && yarn run build:es && yarn run build:umd && yarn run build:umd:min"
+    "build": "microbundle"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.5",
-    "babel-preset-env": "^1.5.1",
-    "babel-preset-react": "^6.11.1",
-    "cross-env": "^5.0.0",
     "eslint": "^3.13.1",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "microbundle": "^0.11.0",
     "prop-types": "^15.5.4",
-    "react": "^15.4.2",
-    "webpack": "^3.3.0"
+    "react": "^15.4.2"
   }
 }
