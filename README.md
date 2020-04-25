@@ -1,4 +1,4 @@
-# react-trafficlight [![Build Status](https://circleci.com/gh/sgnh/react-trafficlight.svg?style=shield)](https://circleci.com/gh/sgnh/react-trafficlight/tree/master)
+# react-trafficlight
 Traffic light component for React.
 
 ![Traffic light](https://github.com/sgnh/react-trafficlight/raw/master/docs/trafficlight.png "Traffic light")
