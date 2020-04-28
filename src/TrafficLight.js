@@ -17,9 +17,10 @@ const TrafficLight = ({
   RedColor,
   YellowColor,
   GreenColor,
+  Horizontal,
   ...props
 }) => (
-  <svg width={`${Size}px`} height={`${Size * scale}px`} viewBox="0 0 60 160" version="1.1" {...props}>
+  <svg width={`${Size}px`} height={`${Size * scale}px`} viewBox="0 0 60 160" version="1.1" transform={Horizontal ? `rotate(-90 0 ${Size * scale * 0.3125 * -1})` : undefined} {...props}>
     <defs>
       <circle style={{ cursor: onRedClick ? 'pointer' : undefined }} id="redCirclePath" cx="30" cy="30" r="20" />
       <circle style={{ cursor: onYellowClick ? 'pointer' : undefined }} id="yellowCirclePath" cx="30" cy="80" r="20" />
@@ -59,6 +60,7 @@ TrafficLight.propTypes = {
   RedColor: PropTypes.string,
   YellowColor: PropTypes.string,
   GreenColor: PropTypes.string,
+  Horizontal: PropTypes.bool,
 };
 
 TrafficLight.defaultProps = {
@@ -74,6 +76,7 @@ TrafficLight.defaultProps = {
   RedColor: '#D0021B',
   YellowColor: '#F8E71C',
   GreenColor: '#7ED321',
+  Horizontal: false,
 };
 
 export default TrafficLight;
