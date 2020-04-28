@@ -59,3 +59,17 @@ class TrafficLightContainerExample2 extends Component {
 
 export default TrafficLightContainerExample2;
 ```
+
+## Usage example 3 - Horizontal
+```javascript
+import React from 'react';
+import TrafficLight from 'react-trafficlight';
+
+const TrafficLightContainerExample3 = () => (
+  <div>
+    <TrafficLight GreenOn Horizontal/>
+  </div>
+);
+
+export default TrafficLightContainerExample3;
+```
