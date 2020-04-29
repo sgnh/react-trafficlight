@@ -20,7 +20,7 @@ const TrafficLight = ({
   Horizontal,
   ...props
 }) => (
-  <svg width={`${Size}px`} height={`${Size * scale}px`} viewBox="0 0 60 160" version="1.1" transform={Horizontal ? `rotate(-90 0 ${Size * scale * 0.3125 * -1})` : undefined} {...props}>
+  <svg width={`${Size * (Horizontal ? scale : 1)}px`} height={`${Size * (Horizontal ? 1 : scale)}px`} viewBox={Horizontal ? "0 0 160 60" : "0 0 60 160"} version="1.1" {...props}>
     <defs>
       <circle style={{ cursor: onRedClick ? 'pointer' : undefined }} id="redCirclePath" cx="30" cy="30" r="20" />
       <circle style={{ cursor: onYellowClick ? 'pointer' : undefined }} id="yellowCirclePath" cx="30" cy="80" r="20" />
@@ -33,13 +33,13 @@ const TrafficLight = ({
         <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1" />
       </filter>
     </defs>
-    <rect fill={BlackColor} x="0" y="0" width="60" height="160" rx="8" />
+    <g transform={Horizontal ? `rotate(-90 30 30)` : undefined}>
+      <rect fill={BlackColor} x="0" y="0" width="60" height="160" rx="8" />
 
-    <use fill={RedOn ? RedColor : DisabledColor} fillRule="evenodd" xlinkHref="#redCirclePath" />
-    <use fill={YellowOn ? YellowColor : DisabledColor} fillRule="evenodd" xlinkHref="#yellowCirclePath" />
-    <use fill={GreenOn ? GreenColor : DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath" />
+      <use fill={RedOn ? RedColor : DisabledColor} fillRule="evenodd" xlinkHref="#redCirclePath" />
+      <use fill={YellowOn ? YellowColor : DisabledColor} fillRule="evenodd" xlinkHref="#yellowCirclePath" />
+      <use fill={GreenOn ? GreenColor : DisabledColor} fillRule="evenodd" xlinkHref="#greenCirclePath" />
 
-    <g>
       <use onClick={onRedClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#redCirclePath" />
       <use onClick={onYellowClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#yellowCirclePath" />
       <use onClick={onGreenClick} fill="black" fillOpacity="1" filter="url(#shadowFilter)" xlinkHref="#greenCirclePath" />
